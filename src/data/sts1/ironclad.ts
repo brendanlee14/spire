@@ -1,0 +1,106 @@
+import { Character } from "../types";
+
+export const ironclad: Character = {
+  slug: "ironclad",
+  name: "Ironclad",
+  description: "A battle-hardened warrior who leverages health as a resource, exponential strength scaling, and deliberate exhaustion of the deck.",
+  accentColor: "#c2410c",
+  strategies: [
+    {
+      slug: "exhaust-infrastructure",
+      name: "Exhaust Infrastructure",
+      rank: 1,
+      tagline: "The highest-skill-ceiling archetype — cycles the entire deck in a single turn through compounding exhaust triggers.",
+      systemicFunction: "Mid-combat deck thinning and explosive action economy generation. Discards liabilities to ensure infinite momentum through looping exhaust triggers.",
+      playstyle: "This synergy utilises cards that permanently remove other cards from the deck during combat. The foundational enabler is Corruption, which reduces the energy cost of all skill cards to zero but causes them to exhaust upon activation. When combined with Feel No Pain (which grants block upon exhaustion) and Dark Embrace (which draws a card upon exhaustion), the Ironclad can cycle through the entire deck in a single turn, generating massive block and locating lethal attacks seamlessly.\n\nThe interaction between Corruption and the Dead Branch relic — which generates a random new card whenever a card is exhausted — creates an infinite, chaotic loop of free resources that easily overwhelms final bosses. This archetype demands deep deck knowledge because the engine is fragile before Corruption is played, requiring the player to survive early encounters with conventional frontloaded damage and block while waiting for the pieces to align.",
+      coreCards: [
+        { name: "Corruption", note: "Engine enabler — makes all Skills 0-cost and exhausting", isCore: true },
+        { name: "Feel No Pain", note: "Generates block every time a card is exhausted", isCore: true },
+        { name: "Dark Embrace", note: "Draws a card every time a card is exhausted", isCore: true },
+        { name: "Fiend Fire", note: "Exhausts entire hand for massive burst damage", isCore: true },
+        { name: "Burning Pact", note: "Exhaust a card to draw 2; thins while drawing", isCore: false },
+        { name: "True Grit", note: "Random exhaust plus block generation", isCore: false },
+      ],
+      keyRelics: [
+        { name: "Dead Branch", note: "Generates a random card on every exhaust — creates infinite loop with Corruption", priority: "essential" },
+        { name: "Burning Blood", note: "Starter relic; heals 6 HP after every combat enabling aggressive pathing", priority: "essential" },
+        { name: "Charon's Ashes", note: "Deals 3 damage to all enemies on every exhaust", priority: "strong" },
+        { name: "Blue Candle", note: "Allows exhausting curse cards and pays 1 HP instead of curse downsides", priority: "situational" },
+      ],
+      strengths: [
+        "Near-unstoppable against bosses once the loop is established",
+        "Exhaust thins the deck, increasing draw consistency",
+        "Dead Branch loop generates essentially infinite resources",
+      ],
+      weaknesses: [
+        "Completely inert before Corruption is drawn",
+        "Vulnerable to Time Eater's card-play limit mechanic",
+        "Requires specific relic support (Dead Branch) to reach maximum ceiling",
+      ],
+    },
+    {
+      slug: "strength-stacking",
+      name: "Strength Stacking",
+      rank: 2,
+      tagline: "Stack permanent Strength then double it with Limit Break for explosive multi-target damage.",
+      systemicFunction: "Rapid offensive scaling culminating in massive frontloaded burst damage capable of neutralising high-health targets.",
+      playstyle: "By utilising cards like Inflame or Spot Weakness, the Ironclad increases their base damage parameter permanently. This is then multiplied exponentially by Limit Break, which doubles the current Strength value. When applied to multi-hit attacks like Whirlwind (which deals damage equal to current Strength per hit, multiple times), the damage output scales aggressively enough to clear multi-enemy encounters instantaneously.\n\nThe core loop is straightforward: apply Strength via powers and event relics early in the run, then transition to Limit Break as the primary scaling mechanism during Act 2. The Vajra relic grants 1 Strength at the start of every combat for free, giving a compounding baseline. Heavy Blade scales particularly well with high Strength as its bonus damage is multiplied by the Strength modifier.",
+      coreCards: [
+        { name: "Limit Break", note: "Doubles current Strength — the primary scaling tool", isCore: true },
+        { name: "Inflame", note: "Permanently grants 2 Strength", isCore: true },
+        { name: "Heavy Blade", note: "High base damage multiplied by Strength", isCore: true },
+        { name: "Whirlwind", note: "Multi-hit; total damage scales exponentially with Strength", isCore: true },
+        { name: "Spot Weakness", note: "Grants Strength equal to enemy attack against attacking enemies", isCore: false },
+        { name: "Double Tap", note: "Plays the next Attack twice", isCore: false },
+      ],
+      keyRelics: [
+        { name: "Vajra", note: "Grants 1 Strength at the start of every combat for free", priority: "essential" },
+        { name: "Burning Blood", note: "Starter relic; enables aggressive early pathing", priority: "essential" },
+        { name: "Akabeko", note: "First attack each combat deals 8 bonus damage", priority: "strong" },
+        { name: "Necronomicon", note: "Plays a 2-cost attack a second time automatically", priority: "strong" },
+      ],
+      strengths: [
+        "Simple to execute once Limit Break is found",
+        "Whirlwind with high Strength clears multi-enemy rooms instantly",
+        "Scales well into Act 3 if Limit Break is upgraded",
+      ],
+      weaknesses: [
+        "Relies on finding Limit Break — without it the deck plateaus",
+        "Slow in Act 1 before Strength is established",
+        "Vulnerable to Strength-reduction debuffs",
+      ],
+    },
+    {
+      slug: "block-optimization",
+      name: "Block Optimization",
+      rank: 3,
+      tagline: "Convert permanent, accumulated Block into offensive damage via Body Slam.",
+      systemicFunction: "Exponential defensive compounding. Converts stored defensive value into offensive output via Body Slam, merging both jobs into a single mechanical action.",
+      playstyle: "Normally, Block expires at the end of a turn. By deploying the Barricade power, Block becomes a permanent, accumulating resource. The player then utilises Entrench to double their current Block total, reaching the mathematical cap of 999 Block over several turns. This immense defensive pool is subsequently weaponised through the Body Slam card, which deals damage equal to the player's current Block.\n\nThe archetype is exceptionally tanky and highly consistent since survival and offense share the same resource. Impervious provides a burst of 30 Block that feeds the Body Slam. Shrug It Off provides inexpensive Block generation. The Horn Cleat relic grants 14 Block at the start of Act 2 if used on the first three turns of combat, providing a free baseline.",
+      coreCards: [
+        { name: "Barricade", note: "Block no longer expires between turns — core engine enabler", isCore: true },
+        { name: "Body Slam", note: "Deals damage equal to current Block — the win condition", isCore: true },
+        { name: "Entrench", note: "Doubles current Block; exponential scaling", isCore: true },
+        { name: "Impervious", note: "Gains 30 Block in a single play", isCore: true },
+        { name: "Shrug It Off", note: "Cost-efficient Block generation plus card draw", isCore: false },
+        { name: "True Grit", note: "Block generation with optional exhaust", isCore: false },
+      ],
+      keyRelics: [
+        { name: "Burning Blood", note: "Enables aggressive pathing by healing post-combat", priority: "essential" },
+        { name: "Calipers", note: "Retains up to 15 Block between turns without Barricade", priority: "strong" },
+        { name: "Captain's Wheel", note: "Gains 18 Block after 3 turns, providing free defensive baseline", priority: "strong" },
+        { name: "Horn Cleat", note: "Grants 14 Block at the start of Act 2 if used on first three turns", priority: "situational" },
+      ],
+      strengths: [
+        "Extremely tanky — near-impossible to kill once Barricade is active",
+        "Single card (Body Slam) provides all offensive output needed",
+        "Consistent: damage and defense scale together",
+      ],
+      weaknesses: [
+        "Entirely dependent on finding Barricade",
+        "Slow to set up — weak early game before Barricade",
+        "Body Slam deals 0 damage if Block is stripped before you attack",
+      ],
+    },
+  ],
+};

@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dungeon-950: #0a0908;
+  --color-dungeon-900: #13110f;
+  --color-dungeon-800: #1e1a16;
+  --color-dungeon-700: #2c261f;
+  --color-dungeon-600: #3d352a;
+
+  --color-ember-400: #fb923c;
+  --color-ember-500: #f97316;
+  --color-ember-600: #ea580c;
+
+  --color-arcane-400: #c084fc;
+  --color-arcane-500: #a855f7;
+  --color-arcane-600: #9333ea;
+
+  --color-gold: #fbbf24;
+  --color-silver: #94a3b8;
+  --color-bronze: #b45309;
+
+  --font-display: var(--font-cinzel), "Cinzel", serif;
+  --font-sans: var(--font-inter), "Inter", sans-serif;
+
+  --shadow-ember-glow: 0 0 28px rgba(249, 115, 22, 0.35);
+  --shadow-arcane-glow: 0 0 28px rgba(168, 85, 247, 0.35);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0a0908;
+  background-image: radial-gradient(ellipse 100% 60% at 50% 0%, #1f0c06 0%, #0a0908 65%);
+  min-height: 100dvh;
+  color: #e7e5e4;
+}
+
+.dungeon-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #3d352a 40%, #3d352a 60%, transparent);
+}
+
+.prose-dungeon p {
+  color: #d6d3d1;
+  line-height: 1.8;
+  margin-bottom: 0.875rem;
+}
